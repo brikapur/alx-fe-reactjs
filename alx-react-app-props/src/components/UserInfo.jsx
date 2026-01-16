@@ -1,5 +1,5 @@
 import UserDetails from './UserDetails';
 function UserInfo({ userData }) {
-    return <UserDetails />
+    return <UserDetails />;
 }
 export default UserInfo;
