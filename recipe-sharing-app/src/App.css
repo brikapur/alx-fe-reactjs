@@ -1,48 +1,20 @@
+/* Global root */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  background-color: aqua;
+  background-color: #f4f6f8; /* light background */
+  color: #333; /* default text color */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Headings */
+h1, h2, h3 {
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
+/* Forms */
 form {
   display: flex;
   flex-direction: column;
@@ -52,10 +24,12 @@ form {
 
 input,
 textarea {
+  width: 100%;
   padding: 10px;
   border-radius: 6px;
-  border: 3px solid rgb(91, 243, 31);
+  border: 2px solid #ccc;
   font-size: 14px;
+  color: #333;
 }
 
 input:focus,
@@ -64,7 +38,7 @@ textarea:focus {
   border-color: #3b82f6;
 }
 
-/* Button */
+/* Buttons */
 button {
   padding: 10px;
   background-color: #3b82f6;
@@ -79,6 +53,49 @@ button:hover {
   background-color: #2563eb;
 }
 
+/* Recipe list */
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: flex-start; /* align cards left */
+}
 
+/* Recipe card */
+.recipe-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 
+.recipe-card h3 {
+  color: #2980b9;
+  margin-bottom: 8px;
+}
 
+.recipe-card p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Form titles */
+form h2, form h3 {
+  color: #3b82f6;
+  margin-bottom: 10px;
+}
+
+/* Optional: center app header */
+.app h1 {
+  margin-bottom: 20px;
+  color: #2563eb;
+}
