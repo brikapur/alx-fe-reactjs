@@ -1,10 +1,14 @@
-const API_URL = "https://api.github.com";
-const headers = {
-    Authorization: 'token $ {import.meta.env.VITE_APP_GITHUB_API_KEY}',
+import axios from "axios";
+
+const API_URL = "https://api.github.com/users";
+
+export const fetchUserData = async (username) => {
+  const response = await axios.get(`${API_URL}/${username}`, {
+    headers: {
+      Authorization: `token ${import.meta.env.VITE_APP_GITHUB_API_KEY}`,
+    },
+  });
+
+  return response.data;
 };
-export const searchUsers = async (username) => {
-    const response = await fetch('${API_URL}/search/users?q=${username}',{
-        headers,
-    });
-    return response.json();
-};
+
