@@ -102,7 +102,7 @@ function Search() {
       {/* Results */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={{...user, html_url: user.html_url, }} />
         ))}
       </div>
 
