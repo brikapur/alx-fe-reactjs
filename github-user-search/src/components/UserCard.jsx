@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchUserDetails } from "../service/githubService";
+import { fetchUserDetails } from "../services/githubService.js";
 
 function UserCard({ user }) {
   const [details, setDetails] = useState(null);
@@ -11,15 +11,17 @@ function UserCard({ user }) {
   }, [user.login]);
 
   return (
-    <div className="flex gap-4 p-4 border rounded shadow-sm">
+    <div className="flex gap-4 p-4 border rounded shadow-sm bg-white">
+      {/* Avatar */}
       <img
         src={user.avatar_url}
         alt={user.login}
         className="w-16 h-16 rounded-full"
       />
 
-      <div>
-        <h3 className="font-semibold">{user.login}</h3>
+      {/* User info */}
+      <div className="flex-1">
+        <h3 className="font-semibold text-lg">{user.login}</h3>
 
         {details ? (
           <>
@@ -38,7 +40,7 @@ function UserCard({ user }) {
           href={user.html_url}
           target="_blank"
           rel="noreferrer"
-          className="text-blue-600 text-sm"
+          className="text-blue-600 text-sm hover:underline"
         >
           View Profile
         </a>

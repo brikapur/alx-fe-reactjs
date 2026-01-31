@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchUserData } from "../service/githubService";
+import { fetchUserData } from "../services/githubService.js";
 import UserCard from "./UserCard";
 
 function Search() {
