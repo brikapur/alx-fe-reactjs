@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react({
+    loader: {
+      ".js": "jsx",
+    },
     include: "**/*.{jsx,js}",
   }),
 ]
