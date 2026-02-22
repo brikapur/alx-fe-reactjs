@@ -1,6 +1,7 @@
 import { Routes, Route, Link, Outlet } from "react-router-dom";
-import ProfileDetails from "./ProfileDetails";
-import ProfileSettings from "./ProfileSettings";
+
+import ProfileDetails from "../pages/ProfileDetails";
+import ProfileSettings from "../pages/ProfileSettings";
 import ProtectedRoute from "../routes/ProtectedRoute";
 
 const Profile = () => {
