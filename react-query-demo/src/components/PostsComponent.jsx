@@ -22,7 +22,16 @@ const PostsComponent = () => {
   } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
-    staleTime: 5000, // cache data for 5 seconds
+
+    // ✅ Cache settings (assignment requires this)
+    cacheTime: 1000 * 60 * 5, // 5 minutes cache storage
+    staleTime: 1000 * 10, // 10 seconds data freshness
+
+    // ✅ Refetch behavior
+    refetchOnWindowFocus: false,
+
+    // ✅ Keep previous data when refetching
+    keepPreviousData: true,
   });
 
   if (isLoading) return <h3>Loading posts...</h3>;
@@ -38,7 +47,7 @@ const PostsComponent = () => {
       </button>
 
       <ul>
-        {data.map((post) => (
+        {data?.map((post) => (
           <li key={post.id}>
             <strong>{post.title}</strong>
             <p>{post.body}</p>
