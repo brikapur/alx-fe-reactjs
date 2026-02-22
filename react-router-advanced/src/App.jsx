@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./components/Profile";
 import Post from "./pages/Post";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
@@ -18,7 +18,13 @@ function App() {
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile/*" element={<Profile />} />
+        <Route 
+        path="/profile/*" 
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        } />
         <Route path="/post/:id" element={<Post />} />
       </Routes>
     </BrowserRouter>
