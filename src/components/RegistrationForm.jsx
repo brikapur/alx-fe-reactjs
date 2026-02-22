@@ -19,14 +19,17 @@ const RegistrationForm = () => {
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.username.trim())
+    if (!formData.username.trim()) {
       newErrors.username = "Username is required";
+    }
 
-    if (!formData.email.trim())
+    if (!formData.email.trim()) {
       newErrors.email = "Email is required";
+    }
 
-    if (!formData.password.trim())
+    if (!formData.password.trim()) {
       newErrors.password = "Password is required";
+    }
 
     return newErrors;
   };
@@ -38,9 +41,8 @@ const RegistrationForm = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
+      console.log("Controlled Form Data:", formData);
       alert("Registration successful!");
-      console.log(formData);
-
       setFormData({
         username: "",
         email: "",
@@ -54,9 +56,9 @@ const RegistrationForm = () => {
       <h2>Controlled Registration Form</h2>
 
       <div>
-        <label>Username</label>
-        <br />
+        <label>Username:</label><br />
         <input
+          type="text"
           name="username"
           value={formData.username}
           onChange={handleChange}
@@ -65,11 +67,10 @@ const RegistrationForm = () => {
       </div>
 
       <div>
-        <label>Email</label>
-        <br />
+        <label>Email:</label><br />
         <input
-          name="email"
           type="email"
+          name="email"
           value={formData.email}
           onChange={handleChange}
         />
@@ -77,11 +78,10 @@ const RegistrationForm = () => {
       </div>
 
       <div>
-        <label>Password</label>
-        <br />
+        <label>Password:</label><br />
         <input
-          name="password"
           type="password"
+          name="password"
           value={formData.password}
           onChange={handleChange}
         />
