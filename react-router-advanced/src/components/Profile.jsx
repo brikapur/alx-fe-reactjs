@@ -2,7 +2,7 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 
 import ProfileDetails from "../pages/ProfileDetails";
 import ProfileSettings from "../pages/ProfileSettings";
-import ProtectedRoute from "../routes/ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Profile = () => {
   return (
