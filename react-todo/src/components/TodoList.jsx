@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([
@@ -44,7 +44,7 @@ const TodoList = () => {
       <form onSubmit={addTodo}>
         <input
           type="text"
-          placeholder="Add  a new todo"
+          placeholder="Add a new todo"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
         />
