@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+../alx-react-app-new/
+../alx-react-app-props/
+../alx-react-app/
+../react-query-demo/
+../react-router-advanced/
