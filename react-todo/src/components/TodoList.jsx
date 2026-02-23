@@ -33,7 +33,8 @@ const TodoList = () => {
     );
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (e, id) => {
+    e.stopPropagation();
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
@@ -63,7 +64,8 @@ const TodoList = () => {
             >
               {todo.text}
             </span>
-            <button onClick={() => deleteTodo(todo.id)}>
+
+            <button onClick={(e) => deleteTodo(e, todo.id)}>
               Delete
             </button>
           </li>
